@@ -129,19 +129,18 @@ public class ATMProject {
         double amount = userInput.nextDouble();
 
         if (amount <=0) {
-            System.out.println("amount must be greater than 0.");
+            System.out.println("amount must be greater than 0");
             return;
         }
 
         if (amount % 10 != 0) {
-            System.out.println("Amount must be a multiple of 10."); 
+            System.out.println("Amount must be a multiple of 10"); 
             return;
         }
 
         if (totalWithdrawals + amount > 1000) {
-            System.out.println("withdrawal limit is 1000.00.");
-            System.out.printf("Remaining withdrawal limit: %.2f%n",
-                    1000.00 - totalWithdrawals);
+            System.out.println("withdrawal limit is 1000.00");
+            System.out.printf("Remaining withdrawal limit: %.2f%n", 1000.00 - totalWithdrawals);
             return;
         }
 
@@ -164,13 +163,12 @@ public class ATMProject {
         totalWithdrawals += amount;
 
         System.out.printf("Fee: %.2f%n", fee);
-        System.out.printf("Withdrawal successful. Balance: %.2f%n", balance);
+        System.out.printf("Withdrawal successful- Balance: %.2f%n", balance);
     }
 
     //account tier
     public static void accountTier() {
-        System.out.printf("Tier: %s, interest rate: %.0f%%%n",
-                getTier(), getInterestRate() * 100);
+        System.out.printf("Tier: %s, interest rate: %.0f%%%n", getTier(), getInterestRate() * 100);
     }
 
     // Get account tier
@@ -201,11 +199,11 @@ public class ATMProject {
 
     //Savings projection
     public static void savingsProjection() {
-        System.out.println("Enter number of years");
+        System.out.println("Enter number of years: ");
         int years = userInput.nextInt();
 
         if (years < 1 || years > 10) {
-            System.out.println("Enter a number from 1 to 10.");
+            System.out.println("Enter a number from 1 to 10");
             return;
         }
 
@@ -221,11 +219,9 @@ public class ATMProject {
 
     //Receipt summary
     public static void receiptSummary() {
-        System.out.printf("Deposits: %d, total: %.2f%n",
-                depositCount, totalDeposits);
+        System.out.printf("Deposits: %d, total: %.2f%n", depositCount, totalDeposits);
 
-        System.out.printf("Withdrawals: %d, total: %.2f%n",
-                withdrawalCount, totalWithdrawals);
+        System.out.printf("Withdrawals: %d, total: %.2f%n", withdrawalCount, totalWithdrawals);
 
         System.out.printf("Balance: %.2f%n", balance);
     }
@@ -236,11 +232,11 @@ public class ATMProject {
         int oldPin = userInput.nextInt();
 
         if (oldPin != pin) {
-            System.out.println("Error: Incorrect old PIN.");
+            System.out.println("Incorrect old PIN");
             return;
         }
 
-        System.out.println("Enter new PIN (4 digits)");
+        System.out.println("Enter new PIN - 4 digits");
         int newPin = userInput.nextInt();
 
         if (newPin < 1000 || newPin > 9999) {
@@ -252,11 +248,11 @@ public class ATMProject {
         int confirmPin = userInput.nextInt();
 
         if (newPin != confirmPin) {
-            System.out.println("Error: PINs do not match.");
+            System.out.println("PINs do not match");
             return;
         }
 
         pin = newPin;
-        System.out.println("PIN changed successfully.");
+        System.out.println("PIN changed successfully");
     }
 }
